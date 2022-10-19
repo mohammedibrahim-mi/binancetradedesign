@@ -17,17 +17,20 @@ class socketful extends StatefulWidget {
 
 class _socketfulState extends State<socketful> {
 
-
+  //socket url
   WebsocketManager binanceWebSocketManager = WebsocketManager('wss://stream.binance.com:9443/ws');
   IOWebSocketChannel binanceWebIOSocketManager = IOWebSocketChannel.connect('wss://stream.binance.com:9443/ws');
+  //list for socket value
   List<List<String>> a;
   List<List<String>> b;
   ScrollController _controller = new ScrollController();
+  
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
     socketCall();
+    //initilaize list
     a = [];
     b = [];
   }
@@ -43,11 +46,13 @@ class _socketfulState extends State<socketful> {
     String ca = "usdt";
     // String c = coinOne.toLowerCase();
     // String ca = coinTwo.toLowerCase();
-    var jsonData =
-        '{"method": "SUBSCRIBE","params": ["$c$ca@depth@1000ms"],"id": 1}';
+    //params
+    var jsonData ='{"method": "SUBSCRIBE","params": ["$c$ca@depth@1000ms"],"id": 1}';
     //print(userId);
     print('Android $jsonData');
+    //send request
       binanceWebIOSocketManager.sink.add(jsonData);
+    //listen response
       binanceWebIOSocketManager.stream.listen((dynamic message) {
         if (message != null) {
           Map userMap = jsonDecode(message);

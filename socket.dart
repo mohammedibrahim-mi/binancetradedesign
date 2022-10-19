@@ -1,8 +1,8 @@
 import 'dart:convert';
-import 'package:Cryptonoma/api/model/Socketdata.dart';
-import 'package:Cryptonoma/custom/app_config.dart';
-import 'package:Cryptonoma/custom/colors.dart';
-import 'package:Cryptonoma/widgets/darkcolor.dart';
+import 'package:Sample/api/model/Socketdata.dart';
+import 'package:Sample/custom/app_config.dart';
+import 'package:Sample/custom/colors.dart';
+import 'package:Sample/widgets/darkcolor.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:web_socket_channel/io.dart';
@@ -79,7 +79,6 @@ class _socketfulState extends State<socketful> {
               as.split(" ")[1].toString().replaceAll("]", " ");
               if (double.parse(amountValue) > 0) {
                 b.insert(0, sampleSell[index]);
-                //    print("v222"+a.toString());
               }
             }
           }
@@ -118,11 +117,6 @@ class _socketfulState extends State<socketful> {
                                       fontSize: 14,
                                       color:   DarkColor.white,
                                     ),),
-                                  // Text("($coinTwo)",
-                                  //     style: GoogleFonts.comfortaa(
-                                  //         fontSize: 10,
-                                  //         color:  model1.isDark ? LightColor.black : DarkColor.white,
-                                  //     ),),
                                 ],
                               ),
                             ),
@@ -135,13 +129,6 @@ class _socketfulState extends State<socketful> {
                                     color:   DarkColor.white,
                                   ),
                                 ),
-                                // Text(
-                                //   "($coinOne)",
-                                //    style:GoogleFonts.comfortaa(
-                                //       fontSize: 10,
-                                //       color:  model1.isDark ? LightColor.black : DarkColor.white,
-                                //   ),
-                                // ),
                               ],
                             ),
                           ],
@@ -168,13 +155,6 @@ class _socketfulState extends State<socketful> {
                                 priceValue =
                                     priceValue.substring(0, priceValue.length - 1);
                               }
-                              // priceVal = double.parse(priceValue) *
-                              //     double.parse(widget.binanceConversionValue);
-
-                              // totalValue = double.parse(priceValue) * double.parse(amountValue);
-
-                              //     double totalValue=double.parse(priceValue)*double.parse(amountValue);
-
                               return new GestureDetector(
                                 //You need to make my child interactive
                                 onTap: () {
@@ -239,11 +219,6 @@ class _socketfulState extends State<socketful> {
                                       fontSize: 14,
                                       color:   DarkColor.white,
                                     ),),
-                                  // Text("($coinTwo)",
-                                  //     style: GoogleFonts.comfortaa(
-                                  //         fontSize: 10,
-                                  //         color:  model1.isDark ? LightColor.black : DarkColor.white,
-                                  //     ),),
                                 ],
                               ),
                             ),
@@ -255,14 +230,7 @@ class _socketfulState extends State<socketful> {
                                     fontSize: 12,
                                     color:   DarkColor.white,
                                   ),
-                                ),
-                                // Text(
-                                //   "($coinOne)",
-                                //    style:GoogleFonts.comfortaa(
-                                //       fontSize: 10,
-                                //       color:  model1.isDark ? LightColor.black : DarkColor.white,
-                                //   ),
-                                // ),
+                                ),                     
                               ],
                             ),
                           ],
@@ -287,16 +255,7 @@ class _socketfulState extends State<socketful> {
                               if (priceValue.endsWith(",")) {
                                 priceValue =
                                     priceValue.substring(0, priceValue.length - 1);
-                              }
-                              // double totalValue=double.parse(priceValue)*double.parse(amountValue);
-
-                              // priceVal = double.parse(priceValue) *
-                              //     double.parse(widget.binanceConversionValue);
-
-                              //  totalValue = double.parse(priceValue) * double.parse(amountValue);
-                              // totalValue=double.parse(priceValue)*double.parse(binanceConversionValue);
-
-                              //     double totalValue=double.parse(priceValue)*double.parse(amountValue);
+                              }                  
                               return new GestureDetector(
                                 //You need to make my child interactive
                                 onTap: () {
